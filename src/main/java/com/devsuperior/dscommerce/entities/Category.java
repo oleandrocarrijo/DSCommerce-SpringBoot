@@ -1,5 +1,6 @@
 package com.devsuperior.dscommerce.entities;
 
+import com.devsuperior.dscommerce.dto.CategoryDTO;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
