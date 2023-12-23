@@ -30,7 +30,6 @@ public class User implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-
     public User() {
 
     }
@@ -126,14 +125,6 @@ public class User implements UserDetails {
         return orders;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-    public void addRole(Role role) {
-        roles.add(role);
-    }
-
     public boolean hasRole(String roleName) {
         for (Role role : roles) {
             if (role.getAuthority().equals(roleName)) {
@@ -141,6 +132,14 @@ public class User implements UserDetails {
             }
         }
         return false;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void addRole(Role role) {
+        roles.add(role);
     }
 
     @Override
